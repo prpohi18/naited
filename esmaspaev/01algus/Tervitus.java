@@ -2,6 +2,9 @@ public class Tervitus{
     public static void main(String[] arg){
         System.out.println("Tere");
         int temperatuur=25;
+        if(arg.length>0){
+            temperatuur=Integer.parseInt(arg[0]);
+        }
         if(temperatuur<-28){
             System.out.println("Külmapüha");
         } else {
