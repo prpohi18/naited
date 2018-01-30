@@ -1,0 +1,5 @@
+* Kuva käsurealt sisestatud arvude summa
+  (Kuva reana sisestatud arvud ükshaaval tsükliga ekraanile)
+  Loo üks alamprogramm, mis muudab käsurealt tulnud tekstid arvudeks
+  Loo alamprogramm arvude summa leidmiseks
+  Kuva tulemus 
