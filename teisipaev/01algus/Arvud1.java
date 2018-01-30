@@ -28,3 +28,11 @@ public class Arvud1{
         }
     }
 }
+/*
+
+[jaagup@greeny 01algus]$ java Arvud1 3 9 7
+19
+19
+19
+
+*/
