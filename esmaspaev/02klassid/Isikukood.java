@@ -21,4 +21,8 @@ public class Isikukood{
     public int paevanr(){
         return Integer.parseInt(andmed.substring(5, 7));        
     }
+    @Override
+    public String toString(){
+        return paevanr()+". "+kuunimi()+" "+aastaarv4kohta();
+    }
 }
