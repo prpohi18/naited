@@ -43,8 +43,15 @@ public class Konto{
            return false;
     }
     public int lisaSumma(int eurod){
+        if(eurod<0){throw new RuntimeException("negatiivne summa");}
         int sisu=loeSumma();
         sisu+=eurod;
+        kirjutaSumma(sisu);
+        return sisu;
+    }
+    public int eemaldaSumma(int eurod){
+        int sisu=loeSumma();
+        sisu-=eurod;
         kirjutaSumma(sisu);
         return sisu;
     }

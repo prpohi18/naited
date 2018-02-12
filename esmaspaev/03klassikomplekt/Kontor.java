@@ -22,4 +22,12 @@ public class Kontor{
         return "Konto "+kontonr+" puudub";
     }
     //Lisa käsklus raha üle kandmiseks ühelt kontolt teisele
+    public boolean ylekanne(String kellelt, String kellele, int summa){
+        if(kontod.get(kellelt)==null){return false;}        
+        if(kontod.get(kellele)==null){return false;}        
+        if(kontod.get(kellelt).loeSumma()<summa){return false;}
+        kontod.get(kellelt).eemaldaSumma(summa);
+        kontod.get(kellele).lisaSumma(summa);
+        return true;
+    }
 }
