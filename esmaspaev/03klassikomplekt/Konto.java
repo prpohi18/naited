@@ -1,10 +1,13 @@
 import java.io.*;
 public class Konto{
     protected String kontonr;
-    protected String kontokaust="kontod/";
+    public static final String kontokaust="kontod/";
     public Konto(String kontonr){
         this.kontonr=kontonr;
         looKonto();
+    }
+    public String kysiKontoNr(){
+        return kontonr;
     }
     public boolean kasOlemas(){
         return new File(kontoFailiNimi()).exists();
