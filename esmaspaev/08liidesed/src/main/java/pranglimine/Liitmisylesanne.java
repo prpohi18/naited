@@ -15,4 +15,10 @@ public class Liitmisylesanne{
     public int kysiSumma(){
         return summa;
     }
+    public int kysiLiidetav1(){
+        return liidetav1;
+    }
+    public int kysiLiidetav2(){
+        return liidetav2;
+    }
 }

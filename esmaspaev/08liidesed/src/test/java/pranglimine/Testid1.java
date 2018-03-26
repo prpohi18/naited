@@ -8,4 +8,26 @@ public class Testid1{
         assertEquals("3+2=", yl.toString());
         assertEquals(5, yl.kysiSumma());
     }
+    
+    public void ylesandeLoomineLiidesest(){
+        LiitmisylesanneteLoojaLiides looja=null;
+        Liitmisylesanne yl=looja.looLiitmisylesanne(100);
+        assertTrue(yl.kysiSumma()<=100);
+        assertEquals(yl.kysiSumma(), yl.kysiLiidetav1()+yl.kysiLiidetav2());
+    }
+    
+    public void juhuarvuLoomine(){
+        JuhuarvudeGeneraatoriLiides generaator=null;
+        boolean yksLeitud=false;
+        boolean viisLeitud=false;
+        for(int i=0; i<1000; i++){
+            int arv=generaator.looJuhuarv(1, 5);
+            assertTrue(arv>=1);
+            assertTrue(arv<=5);
+            if(arv==1){yksLeitud=true;}
+            if(arv==5){viisLeitud=true;}
+        }
+        assertTrue(yksLeitud);
+        assertTrue(viisLeitud);
+    }
 }
