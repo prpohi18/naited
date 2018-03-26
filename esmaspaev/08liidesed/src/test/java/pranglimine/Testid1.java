@@ -8,16 +8,16 @@ public class Testid1{
         assertEquals("3+2=", yl.toString());
         assertEquals(5, yl.kysiSumma());
     }
-    
+    @Test
     public void ylesandeLoomineLiidesest(){
-        LiitmisylesanneteLoojaLiides looja=null;
+        LiitmisylesanneteLoojaLiides looja=new LiitmisylesanneteTavalineLooja();
         Liitmisylesanne yl=looja.looLiitmisylesanne(100);
         assertTrue(yl.kysiSumma()<=100);
         assertEquals(yl.kysiSumma(), yl.kysiLiidetav1()+yl.kysiLiidetav2());
     }
-    
+    @Test
     public void juhuarvuLoomine(){
-        JuhuarvudeGeneraatoriLiides generaator=null;
+        JuhuarvudeGeneraatoriLiides generaator=new JuhuarvudeYhtlaneGeneraator();
         boolean yksLeitud=false;
         boolean viisLeitud=false;
         for(int i=0; i<1000; i++){
