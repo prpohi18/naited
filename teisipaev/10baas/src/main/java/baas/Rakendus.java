@@ -15,6 +15,29 @@ public class Rakendus{
     String tervita(String eesnimi){
         return "Tere, "+eesnimi;
     }
+    @RequestMapping("/lisa")
+    public String lisa(String email, int synniaasta){
+        Jooksja isik=new Jooksja();
+        isik.email=email;
+        isik.synniaasta=synniaasta;
+        isik.voistlustearv=1;
+        jooksjaDao.save(isik);
+        return email+" salvestatud";
+    }
+    
+    @RequestMapping("/kustuta")
+    public String kustuta(String email){
+        Jooksja isik=jooksjaDao.findOne(email);
+        if(isik==null){return email+" puudub";}
+        jooksjaDao.delete(isik);
+        return email+" kustutatud";
+    }
+    
+    @RequestMapping("/loetelu")
+    public Iterable<Jooksja> loetelu(){
+        return jooksjaDao.findAll();    
+    }
+    
     public static void main(String[] arg){
         SpringApplication.run(Rakendus.class, arg);
     }    

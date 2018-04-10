@@ -1,0 +1,8 @@
+CREATE TABLE jooksjad(
+   email VARCHAR(50) NOT NULL PRIMARY KEY,
+   synniaasta INT,
+   voistlustearv INT
+);
+
+INSERT INTO jooksjad VALUES ('juhan@hot.ee', 1965, 156);
+

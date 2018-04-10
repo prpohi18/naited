@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+      <title>Jooksjate haldusleht</title>
+      <script>
+         var xhr=new XMLHttpRequest();
+         xhr.onreadystatechange=andmedSaabusid;
+         function andmedSaabusid(){
+            if(xhr.readyState==4){
+               console.log(xhr.responseText);
+               if(xhr.responseText.endsWith("salvestatud") ||
+                  xhr.responseText.endsWith("kustutatud") ||
+                  xhr.responseText.endsWith("puudub")){
+                    document.getElementById("teatekiht").innerHTML=xhr.responseText;
+                    kysiJooksjad();
+               } else {
+                  kuvaJooksjad();
+               }
+            }
+         }
+         
+         function kuvaJooksjad(){
+            var obj=JSON.parse(xhr.responseText);
+            var s="<ul>"
+            for(var i=0; i<obj.length; i++){
+               s+="<li onclick='kustutamine(\""+obj[i].email+"\")'>"+obj[i].email+"</li>";
+            }
+            s+="</ul>";
+            document.getElementById("jooksjatekiht").innerHTML=s;
+         }
+         function kysiJooksjad(){
+             xhr.open("GET", "/loetelu", true);
+             xhr.send();
+         }
+         function lisamine(){
+             var aadress="/lisa?email="+document.getElementById("kast1").value+
+               "&synniaasta="+document.getElementById("kast2").value;
+             xhr.open("GET", aadress, true);
+             xhr.send();
+         }
+         function kustutamine(email){
+             var aadress="/kustuta?email="+email;
+             xhr.open("GET", aadress, true);
+             xhr.send();
+         }
+      </script>
+  </head>
+  <body onload="kysiJooksjad()">
+    Aadress: <input type="text" id="kast1" />
+    Sünniaasta: <input type="number" id="kast2" />
+    <input type="button" value="Lisa jooksja" onclick="lisamine()" />
+    <div id="teatekiht"></div>
+    <div id="jooksjatekiht"></div>
+  </body>
+</html>
