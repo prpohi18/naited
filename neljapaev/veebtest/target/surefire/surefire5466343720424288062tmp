@@ -1,0 +1,8 @@
+#surefire
+#Thu Apr 05 10:45:15 EEST 2018
+maven.ext.class.path=C\:\\Program Files\\NetBeans 8.2\\java\\maven-nblib\\netbeans-eventspy.jar
+user.dir=D\:\\jaagup\\oma\\01\\prog18neljapaev\\veebtest
+file.encoding=UTF-8
+localRepository=C\:\\Users\\zeus\\.m2\\repository
+basedir=D\:\\jaagup\\oma\\01\\prog18neljapaev\\veebtest
+test=ee.tlu.jaagup.veebtest.Kabetest1

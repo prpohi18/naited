@@ -1,0 +1,32 @@
+<html><head>
+    <title>Kabe</title>
+    <style type="text/css">
+       //body{padding: 0px; margin: 0px;}
+       .tume{background-color: gray}
+       #tabel1{ border: solid 1px black; border-collapse: collapse}
+       #tabel1 td{width: 25px; height: 25px;}
+    </style>
+    <script>
+       const ridu=8; 
+       const veerge=8;
+       function looLaud(){
+           var v="<table id='tabel1'>";
+           for(var rida=0; rida<ridu; rida++){
+              v+="<tr>";
+              for(var veerg=0; veerg<veerge; veerg++){
+                 var klass="";
+                 if((rida+veerg) % 2 == 1){klass='tume';}
+                 v+="<td class='"+klass+"'></td>";
+              }
+              v+="</tr>";
+           }
+           v+="</table>";
+           document.getElementById("lauakiht").innerHTML=v;
+       }
+    </script>
+  </head>
+  <body onload="looLaud();">
+      <h1>Kabe</h1>
+      <div id="lauakiht"><table id="tabel1"><tbody><tr><td class=""></td><td class="tume"></td><td class=""></td><td class="tume"></td><td class=""></td><td class="tume"></td><td class=""></td><td class="tume"></td></tr><tr><td class="tume"></td><td class=""></td><td class="tume"></td><td class=""></td><td class="tume"></td><td class=""></td><td class="tume"></td><td class=""></td></tr><tr><td class=""></td><td class="tume"></td><td class=""></td><td class="tume"></td><td class=""></td><td class="tume"></td><td class=""></td><td class="tume"></td></tr><tr><td class="tume"></td><td class=""></td><td class="tume"></td><td class=""></td><td class="tume"></td><td class=""></td><td class="tume"></td><td class=""></td></tr><tr><td class=""></td><td class="tume"></td><td class=""></td><td class="tume"></td><td class=""></td><td class="tume"></td><td class=""></td><td class="tume"></td></tr><tr><td class="tume"></td><td class=""></td><td class="tume"></td><td class=""></td><td class="tume"></td><td class=""></td><td class="tume"></td><td class=""></td></tr><tr><td class=""></td><td class="tume"></td><td class=""></td><td class="tume"></td><td class=""></td><td class="tume"></td><td class=""></td><td class="tume"></td></tr><tr><td class="tume"></td><td class=""></td><td class="tume"></td><td class=""></td><td class="tume"></td><td class=""></td><td class="tume"></td><td class=""></td></tr></tbody></table></div>
+  
+</body></html>

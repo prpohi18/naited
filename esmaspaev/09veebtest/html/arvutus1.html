@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Pindala</title>
+    <script>
+       function arvutus(){
+          document.getElementById("vastus").innerHTML=document.getElementById("kast1").value*
+              document.getElementById("kast2").value;
+       }
+    </script>
+  </head>
+  <body>
+    <input type="number" id="kast1"> x 
+    <input type="number" id="kast2">
+    <input type="button" id="nupp1" value="=" onclick="arvutus()" />
+    <div id="vastus"></div>
+  </body>
+</html>

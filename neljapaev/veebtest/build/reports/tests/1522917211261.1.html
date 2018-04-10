@@ -1,0 +1,75 @@
+<html><head>
+    <title>Kabe</title>
+    <style type="text/css">
+       //body{padding: 0px; margin: 0px;}
+       .tume{background-color: gray}
+       #tabel1{ border: solid 1px black; border-collapse: collapse}
+       #tabel1 td{width: 25px; height: 25px;}
+    </style>
+    <meta charset="utf-8">
+    <script>
+       const ridu=8; 
+       const veerge=8;
+       let meeleskoht="";
+       function looLaud(){
+           var v="<table id='tabel1'>";
+           for(var rida=0; rida<ridu; rida++){
+              v+="<tr>";
+              for(var veerg=0; veerg<veerge; veerg++){
+                 var klass="";
+                 var sisu="";
+                 var id="k"+rida+""+veerg;
+                 if((rida+veerg) % 2 == 1){klass='tume';
+                    if(rida<=2){sisu='m';}
+                    if(rida>=5){sisu='v';}
+                 }
+                 
+                 v+="<td class='"+klass+"' onclick='vajutus(this)' id='"+id+"'>"+
+                   sisu+"</td>";
+              }
+              v+="</tr>";
+           }
+           v+="</table>";
+           document.getElementById("lauakiht").innerHTML=v;
+       }
+       function vajutus(lahter){
+         // alert(lahter.className+" "+lahter.id)
+         document.getElementById("teated").innerHTML="";
+         if(meeleskoht==""){
+            meeleskoht=lahter.id;
+         } else {
+            if(lahter.innerHTML==""){
+               if(kasLubatudKaik(meeleskoht, lahter.id)){
+                   teeKaik(meeleskoht, lahter.id);
+               } else {
+                  document.getElementById("teated").innerHTML="Lubamatu käik";
+               }
+            }
+         }
+       }
+       function kasLubatudKaik(koht1, koht2){
+          var rida1=parseInt(koht1.substring(1, 2));
+          var rida2=parseInt(koht2.substring(1, 2));
+          var veerg1=parseInt(koht1.substring(2, 3));
+          var veerg2=parseInt(koht2.substring(2, 3));
+          var sisu1=document.getElementById(koht1).innerHTML;
+          var sisu2=document.getElementById(koht2).innerHTML;
+          if(sisu1=="v" && rida1-rida2==1 && Math.abs(veerg2-veerg1)==1){
+             return true;
+          }
+          return false;
+       }
+       
+       function teeKaik(koht1, koht2){
+               document.getElementById(koht2).innerHTML=document.getElementById(meeleskoht).innerHTML;
+               document.getElementById(meeleskoht).innerHTML="";
+               meeleskoht="";       
+       }
+    </script>
+  </head>
+  <body onload="looLaud();">
+      <h1>Kabe</h1>
+      <div id="lauakiht"><table id="tabel1"><tbody><tr><td class="" onclick="vajutus(this)" id="k00"></td><td class="tume" onclick="vajutus(this)" id="k01">m</td><td class="" onclick="vajutus(this)" id="k02"></td><td class="tume" onclick="vajutus(this)" id="k03">m</td><td class="" onclick="vajutus(this)" id="k04"></td><td class="tume" onclick="vajutus(this)" id="k05">m</td><td class="" onclick="vajutus(this)" id="k06"></td><td class="tume" onclick="vajutus(this)" id="k07">m</td></tr><tr><td class="tume" onclick="vajutus(this)" id="k10">m</td><td class="" onclick="vajutus(this)" id="k11"></td><td class="tume" onclick="vajutus(this)" id="k12">m</td><td class="" onclick="vajutus(this)" id="k13"></td><td class="tume" onclick="vajutus(this)" id="k14">m</td><td class="" onclick="vajutus(this)" id="k15"></td><td class="tume" onclick="vajutus(this)" id="k16">m</td><td class="" onclick="vajutus(this)" id="k17"></td></tr><tr><td class="" onclick="vajutus(this)" id="k20"></td><td class="tume" onclick="vajutus(this)" id="k21">m</td><td class="" onclick="vajutus(this)" id="k22"></td><td class="tume" onclick="vajutus(this)" id="k23">m</td><td class="" onclick="vajutus(this)" id="k24"></td><td class="tume" onclick="vajutus(this)" id="k25">m</td><td class="" onclick="vajutus(this)" id="k26"></td><td class="tume" onclick="vajutus(this)" id="k27">m</td></tr><tr><td class="tume" onclick="vajutus(this)" id="k30"></td><td class="" onclick="vajutus(this)" id="k31"></td><td class="tume" onclick="vajutus(this)" id="k32"></td><td class="" onclick="vajutus(this)" id="k33"></td><td class="tume" onclick="vajutus(this)" id="k34" style=""></td><td class="" onclick="vajutus(this)" id="k35"></td><td class="tume" onclick="vajutus(this)" id="k36"></td><td class="" onclick="vajutus(this)" id="k37"></td></tr><tr><td class="" onclick="vajutus(this)" id="k40"></td><td class="tume" onclick="vajutus(this)" id="k41" style="">v</td><td class="" onclick="vajutus(this)" id="k42"></td><td class="tume" onclick="vajutus(this)" id="k43"></td><td class="" onclick="vajutus(this)" id="k44"></td><td class="tume" onclick="vajutus(this)" id="k45" style=""></td><td class="" onclick="vajutus(this)" id="k46"></td><td class="tume" onclick="vajutus(this)" id="k47"></td></tr><tr><td class="tume" onclick="vajutus(this)" id="k50" style=""></td><td class="" onclick="vajutus(this)" id="k51"></td><td class="tume" onclick="vajutus(this)" id="k52" style="">v</td><td class="" onclick="vajutus(this)" id="k53"></td><td class="tume" onclick="vajutus(this)" id="k54" style="">v</td><td class="" onclick="vajutus(this)" id="k55"></td><td class="tume" onclick="vajutus(this)" id="k56">v</td><td class="" onclick="vajutus(this)" id="k57"></td></tr><tr><td class="" onclick="vajutus(this)" id="k60"></td><td class="tume" onclick="vajutus(this)" id="k61">v</td><td class="" onclick="vajutus(this)" id="k62"></td><td class="tume" onclick="vajutus(this)" id="k63">v</td><td class="" onclick="vajutus(this)" id="k64"></td><td class="tume" onclick="vajutus(this)" id="k65">v</td><td class="" onclick="vajutus(this)" id="k66"></td><td class="tume" onclick="vajutus(this)" id="k67">v</td></tr><tr><td class="tume" onclick="vajutus(this)" id="k70">v</td><td class="" onclick="vajutus(this)" id="k71"></td><td class="tume" onclick="vajutus(this)" id="k72">v</td><td class="" onclick="vajutus(this)" id="k73"></td><td class="tume" onclick="vajutus(this)" id="k74">v</td><td class="" onclick="vajutus(this)" id="k75"></td><td class="tume" onclick="vajutus(this)" id="k76">v</td><td class="" onclick="vajutus(this)" id="k77"></td></tr></tbody></table></div>
+      <div id="teated">Lubamatu käik</div>
+  
+</body></html>
