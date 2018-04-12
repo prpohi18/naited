@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+     <title>Koerad</title>
+     <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+     <script>
+        function kuvaKoerad(){
+           $.ajax(
+            {url:"/loetelu", 
+             method:"GET",
+             dataType:"json",
+             success: function(saabuvTekst){
+              console.log(saabuvTekst);
+              $("#koertekiht").empty();
+              var loetelu=$("#koertekiht").append("<ul />");
+              $.each(saabuvTekst, function(nr, koer){
+                 loetelu.append($("<li />").html(koer.koeranimi));
+              });
+            }
+           }
+          );
+        }
+     </script>
+  </head>
+  <body onload="kuvaKoerad()">
+     <h1>Koerad</h1>
+     <div id="koertekiht">kihikoht</div>
+  </body>
+</html>

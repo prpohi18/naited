@@ -1,0 +1,9 @@
+CREATE TABLE koerad(
+   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+   koeranimi VARCHAR(50),
+   synniaasta INT
+);
+
+INSERT INTO koerad VALUES (DEFAULT, 'Muki', 2012);
+
+
