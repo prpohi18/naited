@@ -1,0 +1,5 @@
+Jõed
+
+* Loo klass jõe andmete hoidmiseks (nimetus, pikkus(km), vooluhulk (l/s) suudmes). Loo jõele muutujad jõe kohta kuhu ta suubub ning mitmendal kilomeetril. Otse merre suubuva jõe puhul on sihtjõe väärtuseks null. Ehita paarist jõest ahel ning trüki välja läbitavate jõgede nimetused, et etteantud kohast merre jõuda. 
+* Pane lahendus tööle veebilehena. Lisa funktsioon arvutamaks, mitu kilomeetrit on uuritava jõe etteantud kohast (kilomeetrites suudmest) mereni. Koosta automaattestid kauguste arvutamise kohta. 
+* Jõgesid saab objektidena salvestada andmebaasi ja lugeda sealt. Koosta veebiliides jõgede lisamiseks ning suubumiskoha määramiseks. Veebiliides suhtleb REST-teenustega, mis omakorda suhtlevad objektide kaudu andmebaasiga. Jõele lisajõgede lisamisel kontrolli, et jõest väljuv vooluhulk ei oleks väiksem, kui temasse suubuvate jõgede vooluhulkade summa, vastasel juhul heida erind. Anna käsuna välja jõe lisajõed peajõe suudmest etteantud kauguseni.
