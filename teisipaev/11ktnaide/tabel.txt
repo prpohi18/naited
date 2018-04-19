@@ -1,0 +1,16 @@
+CREATE TABLE joed(
+   nimetus VARCHAR(50) NOT NULL PRIMARY KEY,
+   pikkus DOUBLE,
+   vooluhulk DOUBLE,
+   suudmeKaugusSihtjoeSuudmest DOUBLE,
+   sihtjoeNimetus VARCHAR(50),
+   FOREIGN KEY(sihtjoeNimetus) REFERENCES joed(nimetus)
+);
+
+INSERT INTO joed VALUES ('Pirita', 100, 2000, 0, NULL);
+INSERT INTO joed VALUES ('Kuivajõgi', 33, 15, 50, 'Pirita');
+INSERT INTO joed VALUES ('Kirivalla oja', 10, 3, 10, 'Kuivajõgi');
+
+ALTER TABLE joed CHANGE sihtjoeNimetus sihtjoe_nimetus VARCHAR(50);
+ALTER TABLE joed CHANGE suudmeKaugusSihtjoeSuudmest suudme_kaugus_sihtjoe_suudmest DOUBLE;
+
